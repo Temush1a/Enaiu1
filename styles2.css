@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid rgba(255, 0, 0, 0.3) !important; */
+}
+
+:root {
+    --green: #084212;
+    --blue: #004AAD;
+    --light-bg: #f9fafc;
+    --font: #00021a;
+}
+
+body {
+
+    /* Добавляем фон */
+    background-image: url('images/Group 29.png') ; /* Укажите путь к вашей картинке */
+    background-attachment: fixed;           /* Фон не будет прокручиваться */
+    background-size: cover;                 /* Растянуть на весь экран */
+    background-position: center;            /* Центрировать */
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 5%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: transform 0.3s ease; /* Плавность анимации */
+    z-index: 1000;
+}
+
+.header-hidden {
+    transform: translateY(-100%); /* Уводит меню вверх за пределы экрана */
+}
+
+header.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.20);
+    padding: 1rem 2%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.90) !important; ;
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--green);
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    border: 5px solid; 
+    border-radius: 15px;
+    border-color: transparent;
+}
+
+nav a.active {
+    background: #277d24; 
+    padding: 3px 7px;             
+    border-radius: 15px;            
+    color: #fff;
+    transition: all 0.3s ease;   
+}
+
+nav a:not(.active):hover {
+    color: var(--green);
+}
+
+#hero {
+    background-color: rgba(255, 255, 255, 0.49); /* Белый фон с прозрачностью 85% */
+    border-radius: 15px;                   /* Закругленные углы для мягкости */
+    margin: 15px 1%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+
+    position: relative; 
+    
+    /* Высота секции */
+    height: 90vh;                /* Делает высоту в 90% от экрана */
+    display: flex;               /* Включаем флекс, чтобы центрировать текст внутри */
+    align-items: center;         /* Центровка по вертикали */
+    justify-content: center;     /* Центровка по горизонтали */
+}
+
+#hero img {
+    position: absolute;          /* Абсолютное позиционирование для картинки */
+    top: 25px;
+    left: 50px;
+    width: auto; 
+    max-width: 400px;
+    height: auto;
+    max-height: 80%;            
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+    z-index: 1;                  /* Картинка будет позади текста */
+}
+
+#hero h1, #hero p, #hero h2 {
+    position: absolute;          /* Относительное позиционирование для текста */
+    z-index: 2;                  /* Текст будет поверх картинки */
+    color: #000000;
+    text-shadow: 0 2px 5px rgba(255,255,255,0.8); /* Легкая тень для читаемости */
+}
+
+#hero h1 {
+    top: 100px;
+    left: 550px;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--font);
+    margin-bottom: 10px;
+}
+
+#hero h2 {
+    top: 210px;
+    left: 550px;
+    font-weight: 500;
+    right: 10%;
+    font-size: 1.3rem;
+    color: #00021a;
+    margin-bottom: 25px;
+}
+
+#hero p {
+    top: 80px;
+    left: 550px;
+    font-size: 1rem;
+    color: #0318fa;
+    margin-bottom: 25px;
+}
+
+#hero .btn {
+    position: absolute;
+    right: 10%;
+    bottom: 100px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #277d24;
+    color: white;
+    font-weight: 600;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* section */
+.sec {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.TrashArt .sec {
+    text-align: center !important;
+}
+
+.impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+.sec img {
+    background-color: #277d2460;
+    width: 40px;
+    padding: 3px 5px;
+    border-radius: 15px;
+}
+
+.team-member span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--green);
+
+}
+
+/* About */
+#about p {
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 4rem auto;
+    color: var(--font);
+}
+
+.about-stats {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.about-stats div {
+    background-color: #277d2460;
+    border-radius: 15px;
+    align-items: center;
+    padding: 5px 9px;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about-stats h3 {
+    font-size: 2.5rem;
+    color: var(--blue);
+            font-weight: 700;
+    padding: 0 10px;
+}
+
+.about-stats span {
+    font-size: 1.5rem;
+    color: var(--font);
+
+}
+
+/* Team */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.team-member {
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.42);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-15px);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--blue);
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.team-member p {
+    color: var(--font);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1a1a2e;
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Кнопка "Наверх" */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--blue);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,74,173,0.3);
+    transition: background 0.3s;
+    z-index: 99;
+    font-size: 1.5rem;
+}
+
+.back-to-top:hover {
+    background: var(--green);
+}
+
+/* проджект */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.477);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 40px -10px rgba(0,74,173,0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #eef2f7;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: var(--green);
+    transition: color 0.3s;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green);
+    margin: 1rem 1rem 0.5rem;
+}
+
+.project-card p {
+    color: #3a3a4a;
+    margin: 0 1rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* CONTACT SECTION */
+#contacts {
+    background-color: rgba(255, 255, 255, 0.49); /* Белый фон с прозрачностью 85% */
+    border-radius: 15px;                   /* Закругленные углы для мягкости */
+    margin: 25px 10%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+
+}
+
+#contacts p {
+    text-align: center;
+    margin: 0.5rem 0;
+    color: #2d2d3a;
+}
+
+form {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    font-family: 'Inter', sans-serif;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--blue);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button.btn {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    width: 100%;
+}
+
+button.btn:hover {
+    background-color: var(--green);
+}
